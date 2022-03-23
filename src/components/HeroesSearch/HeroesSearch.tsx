@@ -1,70 +1,52 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import InputBase from '@mui/material/InputBase';
-import { styled, alpha } from '@mui/material/styles';
-import { useDebounce } from 'use-debounce';
+import { useDebouncedCallback } from 'use-debounce';
+import SearchIcon from '@mui/icons-material/Search';
+import { Typography } from '@mui/material';
+import { Search, SearchIconWrapper } from './styles';
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  // marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  border: '2px solid gray',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: '35%',
-  },
-}));
 export interface HeroesSearchProps {
   className?: string;
   onChange: (value: string) => void;
-  value: string;
 }
 
 export const HeroesSearch: React.FunctionComponent<HeroesSearchProps> = ({
   className,
   onChange,
-  value,
 }) => {
   const [val, setVal] = useState('');
-  const [debouncedValue, setDebouncedValue] = React.useState('');
-  const [debounce, cancel] = useDebounce(val, 3000);
-  useEffect(() => {
-    setDebouncedValue(debounce);
-  }, [debounce]);
+
+  const debounced = useDebouncedCallback((value) => {
+    onChange(value);
+  }, 3000);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVal(e.target.value);
+    debounced(e.target.value);
   };
 
   return (
     <>
-      <p
-        style={{
-          fontSize: '1rem',
-          fontFamily: 'sans-serif',
-          fontWeight: 'bold',
-          margin: '0',
-          marginBottom: '5px',
-        }}
+      <Typography
+        variant="subtitle1"
+        gutterBottom
+        component="div"
+        sx={{ fontWeight: 'bold' }}
       >
         My heroe browser:
-      </p>
+      </Typography>
       <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
         <InputBase
           placeholder="Search…"
           inputProps={{ 'aria-label': 'search' }}
           value={val}
           onChange={handleChange}
+          sx={{ display: 'flex', paddingLeft: '32px' }}
         />
       </Search>
-      <p>Val: {val}</p>
-      <p>Debounced value: {debouncedValue}</p>
-      <button onClick={() => cancel}>Cancel debounce</button>
     </>
   );
 };
