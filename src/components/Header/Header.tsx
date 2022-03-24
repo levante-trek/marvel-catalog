@@ -2,11 +2,11 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes';
-import { createSvgIcon, styled } from '@mui/material';
+import { styled } from '@mui/material';
+import marvelLogo from './Marvel_Logo.png';
 
 export interface HeaderProps {
   className?: string;
@@ -31,7 +31,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ className }) => {
       <AppBar position='static'>
         <Toolbar>
           <StyledLink to={ROUTES.HOME}>
-            <img src='./Marvel_Logo.png' alt='logo' />
+            <img src={marvelLogo} alt='logo' />
           </StyledLink>
           <StyledLink to={ROUTES.HOME}>
             <Button color='inherit'>Inicio</Button>
