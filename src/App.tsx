@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import { Header } from './components';
@@ -7,13 +8,14 @@ import { ROUTES } from './routes';
 function App() {
   return (
     <>
-      <h1>Testing APP</h1>
       <Router>
         <Header />
-        <Switch>
-          <Route exact path={ROUTES.HOME} component={Home} />,
-          <Route exact path={ROUTES.HEROES} component={Heroes} />
-        </Switch>
+        <Container>
+          <Switch>
+            <Route exact path={ROUTES.HOME} component={Home} />
+            <Route exact path={ROUTES.HEROES} component={Heroes} />
+          </Switch>
+        </Container>
       </Router>
     </>
   );
