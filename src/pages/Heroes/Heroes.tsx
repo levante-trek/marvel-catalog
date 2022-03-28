@@ -13,7 +13,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [heroes, setHeroes] = useState<Character[]>([]);
-
+  // test comment
   useEffect(() => {
     api.getCharacters().then(({ code, status, data }) => {
       setHeroes(data.results);
