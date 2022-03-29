@@ -20,7 +20,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
     });
   }, []);
 
-  const heroeSingleCard = heroes.map((item, index) => (
+  const heroesCardList = heroes.map((item, index) => (
     <HeroeCard
       name={item.name}
       image={item.thumbnail.path + '.' + item.thumbnail.extension}
@@ -37,7 +37,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
       <h1>Heroes page</h1>
       <HeroesSearch onChange={onChange} />
       <Box mt={2}>
-        <HeroesList items={heroeSingleCard} />
+        <HeroesList items={heroesCardList} />
       </Box>
     </>
   );
