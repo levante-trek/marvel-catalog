@@ -2,6 +2,9 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { api } from '../../api/api';
 import { HeroesList, HeroeCard, HeroesSearch } from '../../components';
+
+import { useFetch } from '../../hooks/useFetch';
+
 import { Character } from '../../types';
 
 export interface HeroesProps {
@@ -10,6 +13,7 @@ export interface HeroesProps {
 
 export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
   const [name, setName] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
   const [heroes, setHeroes] = useState<Character[]>([]);
 
@@ -28,6 +32,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
     setName(value.trim());
   };
 
+
   const heroesCardList = heroes.map((item, index) => (
     <HeroeCard
       name={item.name}
@@ -35,6 +40,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
       key={index}
     />
   ));
+
 
   return (
     <>
