@@ -3,16 +3,16 @@ import { CharactersAPIParams } from './types';
 const domain = 'https://gateway.marvel.com';
 
 export const getParams = (params: CharactersAPIParams = {}) => {
-  const queSeYo: CharactersAPIParams = {};
+  const paramsSearchResult: CharactersAPIParams = {};
   for (const key in params) {
     if (params[key as keyof CharactersAPIParams]) {
-      queSeYo[key as keyof CharactersAPIParams] =
+      paramsSearchResult[key as keyof CharactersAPIParams] =
         params[key as keyof CharactersAPIParams];
     }
   }
 
   return new URLSearchParams({
-    ...queSeYo,
+    ...paramsSearchResult,
     apikey: process.env.REACT_APP_MARVEL_PUBLIC_API_KEY as string,
   }).toString();
 };
