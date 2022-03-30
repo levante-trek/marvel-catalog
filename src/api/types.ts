@@ -1,6 +1,7 @@
 import { CharacterData } from '../types';
 
 export interface CharactersAPIParams {
+  [key: string]: string | undefined;
   name?: string;
   nameStartsWith?: string;
   modifiedSince?: string;

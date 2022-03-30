@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export const useFetch = (url: string) => {
-  const [data, setData] = useState(null);
+export function useFetch<T>(url: string) {
+  const [data, setData] = useState<T>();
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;
 
     const fetchData = async () => {
-      setLoading(true);
+      setIsLoading(true);
       //función asíncrona para poder capturar el error
       try {
         //La variable res espera a la petición fetch
@@ -30,11 +30,10 @@ export const useFetch = (url: string) => {
         }
       } catch (error: any) {
         if (signal.aborted) {
-          setData(null);
           setError(error);
         }
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
@@ -43,5 +42,5 @@ export const useFetch = (url: string) => {
     return () => abortController.abort();
   }, [url]);
 
-  return { data, error, loading };
-};
+  return { data, error, isLoading };
+}
