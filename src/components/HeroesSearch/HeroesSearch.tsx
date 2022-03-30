@@ -18,7 +18,7 @@ export const HeroesSearch: React.FunctionComponent<HeroesSearchProps> = ({
 
   const debounced = useDebouncedCallback((value) => {
     onChange(value);
-  }, 3000);
+  }, 1000);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVal(e.target.value);
@@ -28,9 +28,9 @@ export const HeroesSearch: React.FunctionComponent<HeroesSearchProps> = ({
   return (
     <>
       <Typography
-        variant="subtitle1"
+        variant='subtitle1'
         gutterBottom
-        component="div"
+        component='div'
         sx={{ fontWeight: 'bold' }}
       >
         My heroe browser:
@@ -40,7 +40,7 @@ export const HeroesSearch: React.FunctionComponent<HeroesSearchProps> = ({
           <SearchIcon />
         </SearchIconWrapper>
         <InputBase
-          placeholder="Search…"
+          placeholder='Search…'
           inputProps={{ 'aria-label': 'search' }}
           value={val}
           onChange={handleChange}
