@@ -51,6 +51,7 @@ export const Heroes: React.FunctionComponent<HeroesProps> = ({ className }) => {
     <HeroeCard
       name={item.name}
       image={item.thumbnail.path + '.' + item.thumbnail.extension}
+      description={item.description}
       key={index}
     />
   ));
