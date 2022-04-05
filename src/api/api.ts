@@ -4,7 +4,6 @@ const domain = 'https://gateway.marvel.com';
 
 export const getParams = (params: CharactersAPIParams = {}) => {
   const paramsSearchResult: CharactersAPIParams = {};
-  // console.log('offset de api.ts: ', params.offset);
   for (const key in params) {
     if (params[key as keyof CharactersAPIParams]) {
       paramsSearchResult[key as keyof CharactersAPIParams] =
