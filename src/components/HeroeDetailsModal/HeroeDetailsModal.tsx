@@ -53,7 +53,7 @@ export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> 
                 {name}
               </Typography>
               <Typography variant='body2' color='text.secondary'>
-                {description}
+                {description || 'Anonymous heroe description.'}
               </Typography>
             </CardContent>
             <Button onClick={handleClose} variant='contained' size='small'>
