@@ -7,8 +7,11 @@ import {
   CardMedia,
   Fade,
   Modal,
+  Stack,
   Typography,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../routes';
 
 export interface HeroeDetailsModalProps {
   className?: string;
@@ -29,6 +32,11 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+};
+
+//Temporal user log, use fake-api user status instead when enabled
+const user = {
+  logged: false,
 };
 
 export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> =
@@ -56,9 +64,27 @@ export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> 
                 {description || 'Anonymous heroe description.'}
               </Typography>
             </CardContent>
-            <Button onClick={handleClose} variant='contained' size='small'>
-              Go back
-            </Button>
+            <Stack direction='row' spacing={25}>
+              <Button onClick={handleClose} size='medium'>
+                Volver
+              </Button>
+
+              <Button
+                variant='contained'
+                component={Link}
+                to={{
+                  pathname: ROUTES.CONTRACTFORM,
+                  state: {
+                    name,
+                    description,
+                    image,
+                  },
+                }}
+                disabled={!user.logged}
+              >
+                Contratar
+              </Button>
+            </Stack>
           </Card>
         </Fade>
       </Modal>
