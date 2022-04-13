@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "carlos",
+      "passord": "password",
+      "logged": false,
+      "contracts": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "eduardo",
+      "passord": "password",
+      "logged": false,
+      "contracts": []
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "name": "Contrato de prueba #1",
+      "type": "temporal",
+      "heroe": {
+        "id": 1011334,
+        "name": "3-D Man",
+        "description": "The man on 3D",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+          "extension": "jpg"
+        }
+      },
+      "description": "Descripción de prueba para proteger a la familia... LA FAMILIA, LUIGGI...",
+      "status": "active"
+    },
+    {
+      "id": 1,
+      "name": "Contrato de prueba #2",
+      "type": "",
+      "heroe": {
+        "id": 1011335,
+        "name": "Maria Hill",
+        "description": "La mary, la de las montanias, la hija paco, el churrero, coño",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/00/535ff3f5397cb",
+          "extension": "jpg"
+        }
+      },
+      "description": "Descripción de prueba para proteger a la familia... LA FAMILIA, LUIGGI...",
+      "status": "active"
+    }
+  ]
+}
