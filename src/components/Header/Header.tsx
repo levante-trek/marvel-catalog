@@ -40,6 +40,9 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ className }) => {
             <StyledLink to={ROUTES.HEROES}>
               <Button color='inherit'>Heroes</Button>
             </StyledLink>
+            <StyledLink to={ROUTES.MYCONTRACTS}>
+              <Button color='inherit'>Mis contratos</Button>
+            </StyledLink>
           </Toolbar>
         </Container>
       </AppBar>
