@@ -73,7 +73,7 @@ export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> 
                 variant='contained'
                 component={Link}
                 to={{
-                  pathname: ROUTES.CONTRACTFORM,
+                  pathname: ROUTES.CONTRACT_FORM,
                   state: {
                     name,
                     description,
