@@ -36,7 +36,7 @@ const style = {
 
 //Temporal user log, use fake-api user status instead when enabled
 const user = {
-  logged: false,
+  logged: true,
 };
 
 export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> =
@@ -73,7 +73,7 @@ export const HeroeDetailsModal: React.FunctionComponent<HeroeDetailsModalProps> 
                 variant='contained'
                 component={Link}
                 to={{
-                  pathname: ROUTES.CONTRACT_FORM,
+                  pathname: ROUTES.CONTRACT,
                   state: {
                     name,
                     description,

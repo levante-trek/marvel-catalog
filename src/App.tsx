@@ -2,7 +2,7 @@ import { Container } from '@mui/material';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import { Header } from './components';
-import { Heroes, Home } from './pages';
+import { Heroes, Home, Contract } from './pages';
 import { ROUTES } from './routes';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Switch>
             <Route exact path={ROUTES.HOME} component={Home} />
             <Route exact path={ROUTES.HEROES} component={Heroes} />
+            <Route exact path={ROUTES.CONTRACT} component={Contract} />
           </Switch>
         </Container>
       </Router>

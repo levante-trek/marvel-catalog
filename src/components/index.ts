@@ -3,3 +3,4 @@ export * from './HeroeCard';
 export * from './HeroesList';
 export * from './HeroesSearch';
 export * from './HeroeDetailsModal';
+export * from './ContractForm';

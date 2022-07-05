@@ -1,4 +1,4 @@
-import { Character, CharacterData } from '../types';
+import { CharacterData, ContractCharacter } from '../types';
 
 export interface CharactersAPIParams {
   [key: string]: string | undefined;
@@ -20,19 +20,19 @@ export interface CharacterDataResponse {
   data: CharacterData;
 }
 
-export interface User {
+export interface UserAPI {
   id: number;
   name: string;
   password: string;
-  logged: boolean;
   contracts: Contract['id'][];
 }
 
 export interface Contract {
   id: number;
+  contractorId: number;
   name: string;
-  type: 'temporal' | 'unlimited' | 'by_work';
-  heroe: Character;
+  type: 'temporal' | 'unlimited' | 'job';
+  heroe: ContractCharacter;
   description: string;
   status: 'active' | 'completed';
 }
