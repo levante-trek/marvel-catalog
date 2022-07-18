@@ -17,3 +17,15 @@ export interface Thumbnail {
   path: string;
   extension: string;
 }
+
+export interface ContractCharacter {
+  id: Character['id'];
+  name: Character['name'];
+  description: Character['description'];
+  image: string;
+}
+
+export interface User {
+  name: string;
+  password: string;
+}

@@ -4,20 +4,19 @@
       "id": 1,
       "name": "carlos",
       "passord": "password",
-      "logged": false,
       "contracts": [1, 2]
     },
     {
       "id": 2,
       "name": "eduardo",
       "passord": "password",
-      "logged": false,
       "contracts": []
     }
   ],
   "contracts": [
     {
-      "id": 1,
+      "id": 0,
+      "contractorId": 1,
       "name": "Contrato de prueba #1",
       "type": "temporal",
       "heroe": {
@@ -34,8 +33,9 @@
     },
     {
       "id": 1,
+      "contractorId": 2,
       "name": "Contrato de prueba #2",
-      "type": "",
+      "type": "unlimited",
       "heroe": {
         "id": 1011335,
         "name": "Maria Hill",
